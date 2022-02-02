@@ -1,6 +1,6 @@
 # Migration to spatstat.random
 
-This repository only contains this README about migration to `spatstat.random` for package developers using `spatstat`/`spatstat.core` in their own package.
+This repository only contains this README about migration to `spatstat.random` for package developers using `spatstat`/`spatstat.core`/`spatstat.linnet` in their own package (in the rest of the text we only refer to `spatstat.core` but it applies as well to `spatstat.linnet`).
 
 After the big split up of `spatstat` into subpackages in early 2021 we (@baddstats really) have now managed to split out another 10% of the remaining code of `spatstat.core` into the new package `spatstat.random`.
 If your package uses random generators from `spatstat.core` it will almost certainly need a minor update to be prepared for the upcoming version of `spatstat.core` which doesn't have these.
@@ -14,6 +14,16 @@ We have identified roughly 30 packages that needs to be updated (apart from our 
 `dbmss, ecespa, ENMTools, envi, ETAS, globalKinhom, GmAMisc, highriskzone, idar, lacunaritycovariance, MetaLandSim, mobsim, NLMR, onpoint, rlfsm, selectspm, sf, shar, smacpod, spacejamr, spagmix, sparr, sparrpowR, SpatEntropy, spatsurv, stlnpp, stpp, swdpwr, ttbary`.  
 Around half of these we have found to be actively developed on GitHub and we have made pull requests with suggested changes.
 If you use GitHub and have not received a pull request please open an issue if you would like us to make one.
+
+## How to check the impact on your package
+
+Install the development version of the spatstat familiy of packages with the command below and run `R CMD check` on your package to see how it impacts your package.
+
+```r
+install.packages(c("spatstat.data", "spatstat.utils", "spatstat.sparse", 
+                   "spatstat.geom", "spatstat.random", "spatstat.core", 
+                   "spatstat.linnet", "spatstat"), repos = "https://spatstat.r-universe.dev")
+```
 
 ## Suggested changes to adapt
 
