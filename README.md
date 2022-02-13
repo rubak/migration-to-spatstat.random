@@ -50,7 +50,7 @@ If you have `spatstat.core` in your `NAMESPACE` file you can call functions such
   
   - `importFrom("spatstat.core", ...)`. Then you typically just need to move any random generator functions from `...` to a new entry of the form `importFrom("spatstat.random", ...)` and add `spatstat.random` to the `Imports:` section of `DESCRIPTION`.
   
-  - `import("spatstat.core")`. When the new version of `spatstat.core` is submitted to CRAN it will suffice to add an additional line `import("spatstat.random")`. However, until then the random generators are in both packages and importing all functions from both raises a warning. The interim solution is to modify the existing line to `import("spatstat.core", excepct = ...)` and add `importFrom("spatstat.random", ...)` with the functions used from `spatstat.random` in place of `...`. For example:
+  - `import("spatstat.core")`. When the new version of `spatstat.core` is submitted to CRAN it will suffice to add an additional line `import("spatstat.random")`. However, until then the random generators are in both packages and importing all functions from both raises a warning. The interim solution is to modify the existing line to `import("spatstat.core", except = ...)` and add `importFrom("spatstat.random", ...)` with the functions used from `spatstat.random` in place of `...`. For example:
       + [sparr](https://github.com/tilmandavies/sparr/pull/21/commits/00db6db19a43e8474906b8d1479cdfebf743b3b3)
 
 ### Changes to documentation links
